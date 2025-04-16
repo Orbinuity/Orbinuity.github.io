@@ -13,6 +13,7 @@
     <meta name="robots" content="index, follow">
     <title>Home - Orbinuity</title>
     <link rel="icon" href="assets/logo.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -114,7 +115,7 @@
             <script>
                 async function loadAllChangelogs() {
                     try {
-                        const response = await fetch('https://orbinuity.github.io/.github/profile/README.md');
+                        const response = await fetch('https://raw.githubusercontent.com/Orbinuity/.github/main/profile/README.md');
                         const markdown = await response.text();
                         const htmlContent = marked.parse(markdown);
                         document.getElementById('MainReadme').innerHTML = htmlContent;
